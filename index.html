@@ -350,4 +350,27 @@ aside{background:#f9faf2;border-color:#dbe6d3}.brand span{color:#5f946c}.nav but
 .garden-letter-slots{flex-wrap:wrap!important}
 .garden-letter-tile{min-width:35px}
 @media(max-width:740px){.garden-csv-panel{padding:11px!important}.garden-course-choice .btn{flex:1;min-width:140px}.garden-key-row{gap:2px!important}.garden-key-row button{min-width:0;font-size:12px;padding:8px 0!important}}
+
+/* HOME ↔ GARDEN : identical coordinate plane for saved decoration positions. */
+.wg9-preview-scene,
+.garden-personal-board.wg17-board {
+  aspect-ratio: 1376 / 768 !important;
+  height: auto !important;
+  box-sizing: border-box;
+}
+.wg9-preview-scene > .wg9-scene-bg,
+.garden-personal-board.wg17-board > .garden-v5-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill !important;
+}
+/* Both views use the same percentage-size ornament anchor and scale. */
+.wg9-preview-decoration,
+.wg17-board .wg17-ornament {
+  width: 6.2% !important;
+  aspect-ratio: 1;
+  transform-origin: center center;
+}
 </style><script src="words800.js?v=20261016-v7a" defer></script><script src="app.js?v=20261017-garden-20decor-v2" defer></script></body></html>
