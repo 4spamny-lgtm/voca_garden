@@ -117,6 +117,26 @@
 .wg20-flower-meter{width:100%;height:7px;background:#d5e5cb;overflow:hidden;border-radius:99px}.wg20-flower-meter span{display:block;height:100%;background:#80b486;border-radius:99px}
 .wg12-village .wg12-dots{margin:10px 0 15px}.wg20-garden-guide{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:13px 0}.wg20-garden-legend{border-radius:14px;background:#f0f5e8;border:1px solid #d5e3c9;padding:9px 5px;text-align:center;display:flex;flex-direction:column;gap:3px;color:#49694e;min-width:0}.wg20-garden-legend span{font-size:24px}.wg20-garden-legend strong{font-size:13px}.wg20-garden-legend small{font-size:10px;overflow-wrap:anywhere}
 @media(max-width:600px){.wg20-garden-guide{grid-template-columns:repeat(3,minmax(0,1fr))}.wg20-village-flower-art{width:75px;height:75px}.wg20-village-flower{min-height:86px}}
+
+/* Home layout: compact top panel, missions directly below it */
+.wg9-hero{padding:17px 20px!important;margin-bottom:14px!important}
+.wg9-hero-row{gap:12px!important}
+.wg9-hero-copy h1{font-size:clamp(23px,2.7vw,30px)!important;margin:3px 0 5px!important}
+.wg9-hero-copy p{margin:0 0 8px!important}
+.wg9-flower-name{font-size:clamp(16px,1.8vw,20px)!important;margin-bottom:3px!important}
+.wg9-hero-flower{height:120px!important;width:135px!important}
+.wg9-hero-flower .wg19-sprite{height:100px!important}
+.wg9-hero-flower svg{height:103px!important}
+.wg9-meter{height:7px!important;margin-top:5px!important}
+.wg9-hero-meta{margin:5px 0 12px!important}
+.wg9-hero .wg8-primary-actions{gap:10px!important}
+.wg9-hero .wg8-primary-actions button{min-height:80px!important;padding:12px 16px!important;border-radius:16px!important}
+.wg20-home-missions{padding:18px 20px!important;margin:0 0 16px!important;background:#f0f5e9!important;border-color:#d4e3c9!important;color:#365d44!important}
+.wg20-mission-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}.wg20-mission-heading strong{font-size:18px}.wg20-mission-heading span{font-size:12px;color:#69826a}
+.wg20-mission-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.wg20-mission-grid button{display:flex;flex-direction:column;justify-content:center;text-align:left;gap:5px;min-width:0;min-height:75px;border:1px solid #b9d4b8;border-radius:14px;padding:12px;color:#345e42;background:#fffdf5;font-weight:700}
+.wg20-mission-grid button:hover,.wg20-mission-grid button:focus-visible{background:#e1efdb;border-color:#7fb48b}.wg20-mission-grid button b{font-size:16px}.wg20-mission-grid button small{font-size:11px;color:#64816a;line-height:1.4}
+@media(max-width:740px){.wg20-mission-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wg20-home-missions{padding:13px!important}.wg20-mission-heading{align-items:flex-start;flex-direction:column}.wg9-hero{padding:14px!important}.wg9-hero-flower{height:95px!important;width:90px!important}.wg9-hero-flower .wg19-sprite{height:75px!important}.wg9-hero-flower svg{height:80px!important}.wg9-hero .wg8-primary-actions button{min-height:75px!important;padding:11px!important}}
 </style></head><body><div class="app"><aside><div class="brand">🌷 WORD <span>GARDEN</span></div><div class="nav" id="sidenav"></div><p class="footer">영어 단어와 함께 자라는 작은 마을<br>v8 · GARDEN WORLD</p></aside><main><div class="top"><div><div class="muted">꽃향기 가득한 영어 단어 산책</div><h2 style="margin:5px 0" id="pageTitle">대시보드</h2></div><span id="levelBadge" class="tag">Lv. 1 루키</span></div><div id="view"></div></main></div><nav class="bottomnav" id="bottomnav"></nav><div class="toast hidden" id="toast" role="status"></div><style>
 .map-top{background:linear-gradient(135deg,#19365e,#15294c);border-color:#3a6098}.map-top h2{font-size:27px}.map-avatar{width:130px;height:118px;position:relative;flex-shrink:0}.map-hero{width:95px;height:110px;overflow:hidden;position:absolute;right:15px;top:0}.map-hero svg{height:115px;width:100%}.map-buddy{width:49px;position:absolute;right:0;bottom:0;font-size:27px;text-align:center}.map-buddy svg{width:100%;height:55px}.map-actions{display:flex;gap:9px;margin-top:17px;flex-wrap:wrap}.map-current-progress{color:#bad6fa;font-size:12px;margin-top:12px}
 .map-tools{margin:17px 0 12px;padding:15px}.map-region-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:13px}.map-tab{min-width:0;border:1px solid #48678b;background:#233b5b;border-radius:13px;padding:11px 4px;color:#edf5ff;font-weight:750;font-size:13px}.map-tab:hover,.map-tab:focus-visible{background:#375d89;border-color:#80b2ee}.map-tab small{display:block;font-size:11px;margin-top:3px}.map-help{font-size:12px;color:#bfd4f0;margin:12px 0 0}
@@ -373,4 +393,4 @@ aside{background:#f9faf2;border-color:#dbe6d3}.brand span{color:#5f946c}.nav but
   aspect-ratio: 1;
   transform-origin: center center;
 }
-</style><script src="words800.js?v=20261016-v7a" defer></script><script src="app.js?v=20261017-garden-20decor-v2" defer></script></body></html>
+</style><script src="words800.js?v=20261016-v7a" defer></script><script src="app.js?v=20261017-garden-home-missions" defer></script></body></html>
