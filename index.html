@@ -105,6 +105,18 @@
 .wg17-tools strong{color:#3c6949}.wg17-tools .btn{padding:8px 9px;font-size:11px}
 .wg17-board .garden-flower{z-index:10}
 @media(max-width:620px){.wg17-ornament{width:10%}.wg17-tools{gap:6px}}
+
+/* v20: show each village's permanent flower and synchronized growth in world map */
+.wg20-village-flower{display:flex;align-items:center;gap:10px;margin:10px 0 9px;padding:8px 10px;border-radius:15px;background:#fffef3c9;border:1px solid #d5e3c8;min-height:98px}
+.wg20-village-flower-art{width:88px;height:88px;flex-shrink:0;display:flex;align-items:flex-end;justify-content:center}
+.wg20-world-flower{width:100%;height:100%;display:grid;place-items:end center}
+.wg20-world-flower img{width:100%;height:100%;object-fit:contain;object-position:center bottom;transform-origin:center bottom}
+.wg20-growth-1 img{transform:scale(.35)}.wg20-growth-2 img{transform:scale(.55)}.wg20-growth-3 img{transform:scale(.77)}.wg20-growth-4 img{transform:scale(1.05)}
+.wg20-empty-bed{font-size:22px;display:grid;gap:2px;text-align:center;align-content:end;color:#6e8869}.wg20-empty-bed small{font-size:10px}
+.wg20-village-flower-info{flex:1;min-width:0;display:grid;gap:4px;color:#486d4c}.wg20-village-flower-info strong{font-size:16px}.wg20-village-flower-info small{font-size:11px;color:#6b826b}
+.wg20-flower-meter{width:100%;height:7px;background:#d5e5cb;overflow:hidden;border-radius:99px}.wg20-flower-meter span{display:block;height:100%;background:#80b486;border-radius:99px}
+.wg12-village .wg12-dots{margin:10px 0 15px}.wg20-garden-guide{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:13px 0}.wg20-garden-legend{border-radius:14px;background:#f0f5e8;border:1px solid #d5e3c9;padding:9px 5px;text-align:center;display:flex;flex-direction:column;gap:3px;color:#49694e;min-width:0}.wg20-garden-legend span{font-size:24px}.wg20-garden-legend strong{font-size:13px}.wg20-garden-legend small{font-size:10px;overflow-wrap:anywhere}
+@media(max-width:600px){.wg20-garden-guide{grid-template-columns:repeat(3,minmax(0,1fr))}.wg20-village-flower-art{width:75px;height:75px}.wg20-village-flower{min-height:86px}}
 </style></head><body><div class="app"><aside><div class="brand">🌷 WORD <span>GARDEN</span></div><div class="nav" id="sidenav"></div><p class="footer">영어 단어와 함께 자라는 작은 마을<br>v8 · GARDEN WORLD</p></aside><main><div class="top"><div><div class="muted">꽃향기 가득한 영어 단어 산책</div><h2 style="margin:5px 0" id="pageTitle">대시보드</h2></div><span id="levelBadge" class="tag">Lv. 1 루키</span></div><div id="view"></div></main></div><nav class="bottomnav" id="bottomnav"></nav><div class="toast hidden" id="toast" role="status"></div><style>
 .map-top{background:linear-gradient(135deg,#19365e,#15294c);border-color:#3a6098}.map-top h2{font-size:27px}.map-avatar{width:130px;height:118px;position:relative;flex-shrink:0}.map-hero{width:95px;height:110px;overflow:hidden;position:absolute;right:15px;top:0}.map-hero svg{height:115px;width:100%}.map-buddy{width:49px;position:absolute;right:0;bottom:0;font-size:27px;text-align:center}.map-buddy svg{width:100%;height:55px}.map-actions{display:flex;gap:9px;margin-top:17px;flex-wrap:wrap}.map-current-progress{color:#bad6fa;font-size:12px;margin-top:12px}
 .map-tools{margin:17px 0 12px;padding:15px}.map-region-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:13px}.map-tab{min-width:0;border:1px solid #48678b;background:#233b5b;border-radius:13px;padding:11px 4px;color:#edf5ff;font-weight:750;font-size:13px}.map-tab:hover,.map-tab:focus-visible{background:#375d89;border-color:#80b2ee}.map-tab small{display:block;font-size:11px;margin-top:3px}.map-help{font-size:12px;color:#bfd4f0;margin:12px 0 0}
@@ -325,4 +337,4 @@ aside{background:#f9faf2;border-color:#dbe6d3}.brand span{color:#5f946c}.nav but
  main:has(#flipCard) .cardstudy{min-height:180px!important}
 }
 @media(min-width:600px) and (max-height:750px){.wg11-growing-flower{display:none!important}.wg11-question .choice{min-height:39px!important}}
-</style><script src="words800.js?v=20261016-v7a" defer></script><script src="app.js?v=20261017-gardenfix1" defer></script></body></html>
+</style><script src="words800.js?v=20261016-v7a" defer></script><script src="app.js?v=20261017-map-20261017-gardenfix1" defer></script></body></html>
