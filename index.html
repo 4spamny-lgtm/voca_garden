@@ -137,6 +137,25 @@
 .wg20-mission-grid button{display:flex;flex-direction:column;justify-content:center;text-align:left;gap:5px;min-width:0;min-height:75px;border:1px solid #b9d4b8;border-radius:14px;padding:12px;color:#345e42;background:#fffdf5;font-weight:700}
 .wg20-mission-grid button:hover,.wg20-mission-grid button:focus-visible{background:#e1efdb;border-color:#7fb48b}.wg20-mission-grid button b{font-size:16px}.wg20-mission-grid button small{font-size:11px;color:#64816a;line-height:1.4}
 @media(max-width:740px){.wg20-mission-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wg20-home-missions{padding:13px!important}.wg20-mission-heading{align-items:flex-start;flex-direction:column}.wg9-hero{padding:14px!important}.wg9-hero-flower{height:95px!important;width:90px!important}.wg9-hero-flower .wg19-sprite{height:75px!important}.wg9-hero-flower svg{height:80px!important}.wg9-hero .wg8-primary-actions button{min-height:75px!important;padding:11px!important}}
+
+/* Home only: the green hero already contains title, level and XP. */
+main:has(.wg9-hero) > .top{display:none!important}
+main:has(.wg9-hero){padding-top:clamp(12px,2vw,24px)}
+/* Prominent four-mode mission launcher */
+.wg20-home-missions{background:linear-gradient(120deg,#e3efdb,#f7f6e7)!important;border:2px solid #9dbf98!important;padding:19px 20px 21px!important;box-shadow:0 5px 17px #3b69411a!important}
+.wg20-mission-heading strong{font-size:22px!important;color:#2d6143!important}
+.wg20-mission-heading span{color:#426e53!important;font-weight:600}
+.wg20-mission-grid{gap:12px!important}
+.wg20-mission-grid button{min-height:112px!important;padding:17px 16px!important;border:2px solid transparent!important;border-radius:17px!important;box-shadow:0 5px 0 #284b3833,0 8px 17px #294b301a!important;color:#fff!important;transition:transform .15s,filter .15s!important}
+.wg20-mission-grid button:nth-child(1){background:linear-gradient(140deg,#397e65,#2b6953)!important}
+.wg20-mission-grid button:nth-child(2){background:linear-gradient(140deg,#568a51,#3c754b)!important}
+.wg20-mission-grid button:nth-child(3){background:linear-gradient(140deg,#477e83,#2b6871)!important}
+.wg20-mission-grid button:nth-child(4){background:linear-gradient(140deg,#8173b1,#695b9c)!important}
+.wg20-mission-grid button b{font-size:19px!important;color:#fff!important}
+.wg20-mission-grid button small{font-size:13px!important;color:#f4fff4!important;opacity:1!important}
+.wg20-mission-grid button:hover{filter:brightness(1.09);transform:translateY(-2px)}
+.wg20-mission-grid button:focus-visible{outline:3px solid #e7a951!important;outline-offset:3px}
+@media(max-width:740px){.wg20-mission-grid button{min-height:99px!important;padding:13px!important}.wg20-mission-grid button b{font-size:17px!important}.wg20-mission-grid button small{font-size:12px!important}}
 </style></head><body><div class="app"><aside><div class="brand">🌷 WORD <span>GARDEN</span></div><div class="nav" id="sidenav"></div><p class="footer">영어 단어와 함께 자라는 작은 마을<br>v8 · GARDEN WORLD</p></aside><main><div class="top"><div><div class="muted">꽃향기 가득한 영어 단어 산책</div><h2 style="margin:5px 0" id="pageTitle">대시보드</h2></div><span id="levelBadge" class="tag">Lv. 1 루키</span></div><div id="view"></div></main></div><nav class="bottomnav" id="bottomnav"></nav><div class="toast hidden" id="toast" role="status"></div><style>
 .map-top{background:linear-gradient(135deg,#19365e,#15294c);border-color:#3a6098}.map-top h2{font-size:27px}.map-avatar{width:130px;height:118px;position:relative;flex-shrink:0}.map-hero{width:95px;height:110px;overflow:hidden;position:absolute;right:15px;top:0}.map-hero svg{height:115px;width:100%}.map-buddy{width:49px;position:absolute;right:0;bottom:0;font-size:27px;text-align:center}.map-buddy svg{width:100%;height:55px}.map-actions{display:flex;gap:9px;margin-top:17px;flex-wrap:wrap}.map-current-progress{color:#bad6fa;font-size:12px;margin-top:12px}
 .map-tools{margin:17px 0 12px;padding:15px}.map-region-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:13px}.map-tab{min-width:0;border:1px solid #48678b;background:#233b5b;border-radius:13px;padding:11px 4px;color:#edf5ff;font-weight:750;font-size:13px}.map-tab:hover,.map-tab:focus-visible{background:#375d89;border-color:#80b2ee}.map-tab small{display:block;font-size:11px;margin-top:3px}.map-help{font-size:12px;color:#bfd4f0;margin:12px 0 0}
@@ -393,4 +412,4 @@ aside{background:#f9faf2;border-color:#dbe6d3}.brand span{color:#5f946c}.nav but
   aspect-ratio: 1;
   transform-origin: center center;
 }
-</style><script src="words800.js?v=20261016-v7a" defer></script><script src="app.js?v=20261017-garden-home-missions" defer></script></body></html>
+</style><script src="words800.js?v=20261016-v7a" defer></script><script src="app.js?v=20261017-garden-mission-focus" defer></script></body></html>
