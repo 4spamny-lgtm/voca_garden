@@ -217,7 +217,9 @@ function wg9FlowerArt(f){
  return `<img class="wg19-sprite" src="assets/flowers/${WG19_FLOWER_FILES[index]}_${stage}.png" alt="${f.name} ${['씨앗','새싹','꽃봉오리','개화','만개'][f.level]}" loading="lazy">`;
 }
 function wg19GardenIllustration(id){
- if(['bench','pot','lamp','bird','mushroom','arch'].includes(id))return `<img class="wg19-sprite" src="assets/decor/${id}.png" alt="" draggable="false">`;
+ const replacementDecor = {"stone": "stepping_stones", "butterfly": "butterfly_shelter", "hedge": "rounded_hedge", "basket": "picnic_basket", "sign": "wooden_sign", "fountain": "small_fountain", "windmill": "small_windmill", "pond": "mini_pond", "swing": "wooden_swing", "lantern": "garden_lantern"};
+ const fileId = replacementDecor[id] || id;
+ if(['bench','pot','lamp','bird','mushroom','arch','white_daisy','pink_wildflower','purple_wildflower','blue_forget_me_not','yellow_wildflower','butterflies','ladybug_leaf','garden_pebbles','watering_can','wooden_stepping_stones',...Object.keys(replacementDecor)].includes(id))return `<img class="wg19-sprite" src="assets/decor/${fileId}.png" alt="" draggable="false">`;
  return gardenIllustration(id);
 }
 function wg9GardenPreview(){const fs=wg9FlowerStates(),g=gardenState();return `<div class="wg9-preview-scene"><img src="assets/garden-c.png" alt="" aria-hidden="true" class="wg9-scene-bg">${fs.map((f,i)=>f.level===0?'':`<div class="wg9-preview-flower ${f.level>0?'living':''} ${f.level>0&&f.level<4?'growing':''}" style="left:${WG9_BEDS[i].x}%;top:${WG9_BEDS[i].y}%" title="${f.village} · ${f.name} ${f.rate}%">${wg9FlowerArt(f)}</div>`).join('')}${Object.entries(g.placements).map(([key,raw])=>{const place=gardenPlaced(raw,Number(key));return place?`<span class="wg9-preview-decoration" style="left:${place.x}%;top:${place.y}%;transform:translate(-50%,-50%) scale(${place.scale})">${wg19GardenIllustration(place.id)}</span>`:''}).join('')}</div>`}
@@ -594,7 +596,17 @@ const GARDEN_ITEMS=[
  {id:'windmill',name:'작은 풍차',cost:65},
  {id:'pond',name:'미니 연못',cost:70},
  {id:'swing',name:'나무 그네',cost:75},
- {id:'lantern',name:'꽃등 장식',cost:35}
+ {id:'lantern',name:'꽃등 장식',cost:35},
+ {id:'white_daisy',name:'흰 데이지 들꽃',cost:12},
+ {id:'pink_wildflower',name:'분홍 들꽃',cost:15},
+ {id:'purple_wildflower',name:'보라 들꽃',cost:15},
+ {id:'blue_forget_me_not',name:'하늘색 물망초',cost:18},
+ {id:'yellow_wildflower',name:'노란 들꽃',cost:12},
+ {id:'butterflies',name:'나비 한 쌍',cost:25},
+ {id:'ladybug_leaf',name:'무당벌레 잎사귀',cost:15},
+ {id:'garden_pebbles',name:'정원 조약돌',cost:15},
+ {id:'watering_can',name:'빈티지 물뿌리개',cost:40},
+ {id:'wooden_stepping_stones',name:'나무 디딤돌 세트',cost:20}
 ];
 const GARDEN_SLOTS=[{x:22,y:38},{x:50,y:26},{x:79,y:35},{x:20,y:73},{x:48,y:78},{x:79,y:73},{x:9,y:21},{x:31,y:18},{x:60,y:13},{x:88,y:18},{x:91,y:51},{x:91,y:84},{x:62,y:90},{x:36,y:90},{x:9,y:88},{x:9,y:56},{x:59,y:59},{x:88,y:64},{x:14,y:43},{x:36,y:37},{x:69,y:27},{x:81,y:15},{x:16,y:61},{x:36,y:64},{x:72,y:72},{x:48,y:48},{x:28,y:82},{x:70,y:88},{x:95,y:36},{x:44,y:11}];
 let gardenSelected='bench';
