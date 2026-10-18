@@ -422,4 +422,22 @@ aside{background:#f9faf2;border-color:#dbe6d3}.brand span{color:#5f946c}.nav but
 .wg20-mission-grid button b,.wg20-mission-grid button small{color:inherit!important;opacity:1!important}
 .wg20-mission-grid button:hover{filter:brightness(.985)!important;transform:translateY(-2px)}
 .wg20-mission-grid button:active{transform:translateY(1px)!important}
-</style><script src="words800.js?v=20261016-v7a" defer></script><script src="app.js?v=20261017-candy-mission-fix" defer></script></body></html>
+
+/* Mobile: keep the main navigation hidden, NOT the garden shop nested in the view. */
+@media(max-width:740px){
+ .app > aside{display:none!important}
+ #view aside.garden-v5-editor{display:block!important;position:relative!important;width:100%!important;min-width:0!important;height:auto!important;overflow:visible!important;border-right:1px solid #dce8d3!important}
+ #view .garden-v5-items{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ #view .garden-shop-tile{min-width:0!important}
+ #view .garden-shop-actions .btn{min-height:34px;padding:7px 6px;font-size:11px}
+}
+@media(min-width:500px) and (max-width:740px){#view .garden-v5-items{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+/* Each correct answer blooms one flower; up to ten per mission. */
+.wg11-growing-flower,.mission-flower-tracker{display:grid!important;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;max-width:620px;margin:9px auto!important;line-height:1.35!important;font-size:clamp(17px,3.4vw,29px)!important}
+.mission-flower{display:grid;place-items:center;min-width:0;min-height:32px;transition:transform .2s ease,opacity .2s ease}
+.mission-flower.bloomed{animation:mission-bloom .25s ease-out both}
+.mission-flower.empty{opacity:.3;color:#7ba481;border-bottom:2px dotted #9fbc95}
+@keyframes mission-bloom{from{transform:scale(.6)}to{transform:scale(1)}}
+@media(max-width:420px){.wg11-growing-flower,.mission-flower-tracker{gap:2px;font-size:19px!important}.mission-flower{min-height:27px}}
+@media(prefers-reduced-motion:reduce){.mission-flower.bloomed{animation:none}}
+</style><script src="words800.js?v=20261016-v7a" defer></script><script src="app.js?v=20261018-mobile-flower-voice" defer></script></body></html>
